@@ -62,14 +62,34 @@ p users["Jonathan"][:twitter]
 p users["Erik"][:home_town]
 
 # 3. Get the array of Erik's lottery numbers
-p users ["Erik"][:lottery_numbers]
+p users["Erik"][:lottery_numbers]
 
 # 4. Get the species of Avril's pet Monty
-p users ["Avril"][:pets][:species]
+p users["Avril"][:pets][0][:species]
+# use [0]--this is the index of the hash of the element trying to be accessed i.e. "snake"
 
 # 5. Get the smallest of Erik's lottery numbers
+p users["Erik"][:lottery_numbers].min
+# use the .min command assuming you're unable to find index number of the value key
+
 # 6. Return an array of Avril's lottery numbers that are even
+result = []
+for number in users["Avril"][:lottery_numbers]
+  result << number if number.even?
+end
+p result
+
 # 7. Erik is one lottery number short! Add the number `7` to be included in his lottery numbers
+users["Erik"][:lottery_numbers] << 7
+# use shovel (<<) or .push to add 7 to array
+
 # 8. Change Erik's hometown to Edinburgh
+
 # 9. Add a pet dog to Erik called "Fluffy"
+dog = {
+  :name => "fluffy",
+  :species => "dog"
+}
+p dog
+
 # 10. Add another person to the users hash
